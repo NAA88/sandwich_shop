@@ -12,10 +12,26 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Sandwich Shop App',
       home: Scaffold(
-        appBar: AppBar(title: const Text('My Sandwich Shop'),
-        backgroundColor: Colors.orange,
-      ),
-        body: const Center(child: OrderItemDisplay('Footlong', 5)),
+        appBar: AppBar(
+          title: const Text('My Sandwich Shop'),
+          backgroundColor: Colors.orange,
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            OrderItemDisplay('Footlong', 5),
+            Row(
+              children: [
+                ElevatedButton(
+                    onPressed: () => print('Add button pressed!'),
+                    child: const Text('Add')),
+                ElevatedButton(
+                    onPressed: () => print('Remove button pressed!'),
+                    child: const Text('Remove')),
+              ],
+            )
+          ],
+        ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             // Add your onPressed code here!

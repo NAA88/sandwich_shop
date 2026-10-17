@@ -9,36 +9,9 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Sandwich Shop App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('My Sandwich Shop'),
-          backgroundColor: Colors.orange,
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            OrderItemDisplay('Footlong', 5),
-            Row(
-              children: [
-                ElevatedButton(
-                    onPressed: () => print('Add button pressed!'),
-                    child: const Text('Add')),
-                ElevatedButton(
-                    onPressed: () => print('Remove button pressed!'),
-                    child: const Text('Remove')),
-              ],
-            )
-          ],
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            // Add your onPressed code here!
-          },
-          child: const Icon(Icons.add),
-        ),
-      ),
+      home: OrderScreen(maxQuantity: 5),
     );
   }
 }
@@ -59,7 +32,30 @@ class _OrderScreenState extends State<OrderScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(title: const Text('Sandwich Counter')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            OrderItemDisplay('Footlong', _quantity),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: (() => print('Add button pressed!')),
+                  child: const Text('Add'),
+                ),
+                ElevatedButton(
+                  onPressed: (() => print('Remove button pressed!')),
+                  child: const Text('Remove'),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 

@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
 
-void main() {}
+void main() {
+  runApp(const App());
+}
 
-//class MyApp extends StatelessWidget {
+class App extends StatelessWidget  {
+  const App({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
@@ -33,7 +44,7 @@ void main() {}
   }
 }
 
-//class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   // This widget is the home page of your application. It is stateful, meaning
@@ -51,7 +62,7 @@ void main() {}
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-//class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -118,3 +129,4 @@ void main() {}
     );
   }
 }
+
